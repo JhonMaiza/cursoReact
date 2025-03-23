@@ -28,7 +28,7 @@ export const useFetch = ( url ) => {
     if( localCache[ url ] ){
       console.log('Usando cache');
       setState({
-        data: localCache[ url],
+        data: localCache[ url ],
         isLoading: false,
         hasError: false,
         error: null

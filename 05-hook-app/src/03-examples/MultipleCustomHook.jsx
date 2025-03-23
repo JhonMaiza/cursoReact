@@ -16,7 +16,7 @@ export const MultipleCustomHook = () => {
         ? <LoadingMessage/>
         : (
           <PokemonCard 
-            id={ counter }
+            id={ data.id }
             name={ data.name }
             sprites={ [
               data.sprites.front_default,
@@ -32,7 +32,11 @@ export const MultipleCustomHook = () => {
         Anterior
       </button>
 
-      <button className='btn btn-primary mt-2' onClick={ () => increment() }>
+      <button 
+        className='btn btn-primary mt-2'
+        onClick={ () => increment() }
+        disabled={ isLoading }
+      >
         Siguiente
       </button>
     </>
