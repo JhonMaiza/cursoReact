@@ -4,7 +4,7 @@ import { AuthLoyout } from '../layout/AuthLoyout';
 import { useForm } from '../../hook';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMemo, useState } from 'react';
-import { startCreatingUserWithEmailPasswod } from '../../store/auth/thunks';
+import { startCreatingUserWithEmailPassword } from '../../store/auth/thunks';
 
 const formData = {
   email: '',
@@ -32,14 +32,13 @@ export const RegisterPage = () => {
     event.preventDefault();
     setFormSubmited( true );
     if( !isFormValid ) return;
-    dispatch( startCreatingUserWithEmailPasswod( formState ) );
+    dispatch( startCreatingUserWithEmailPassword( formState ) );
     // onResetForm();
   };
 
   return (
     <AuthLoyout title="Crear Cuenta">
-      <h1>FormValid { isFormValid? 'Valido': 'Incorrecto'}</h1>
-      <form onSubmit={ onSubmit }>
+      <form onSubmit={ onSubmit } className="animete__animeted animate__fadeIn animete__faster">
         <Grid2 container>
         <Grid2 size={ { sm: 12 }} sx={{ mt: 2 }}>
             <TextField 

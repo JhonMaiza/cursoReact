@@ -44,17 +44,20 @@ export const registerUserWithEmailPassword = async ({ email, password, displayNa
 };
 
 export const loginWithEmailPassword = async ({ email, password }) => {
-    // signInWithEmailAndPassword
     try {
         const resp = await signInWithEmailAndPassword( FirebaseAuth, email, password );
-        console.log( resp );
+        const { uid, displayName, photoURL } = resp.user;
         return{
             ok: true,
-            resp
+            uid, displayName, photoURL
         }
         
     } catch (error) {
         console.log( error );
         return { ok: false, errorMessage: error.message }
     }
+};
+
+export const logoutFirebase = async() => {
+    return await FirebaseAuth.signOut();
 }

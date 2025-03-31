@@ -33,7 +33,7 @@ export const LoginPage = () => {
 
   return (
     <AuthLoyout title="Login">
-      <form onSubmit={ onSubmit }>
+      <form onSubmit={ onSubmit } className="animete__animeted animate__fadeIn animete__faster">
         <Grid2 container>
           <Grid2 size={ { sm: 12 }} sx={{ mt: 2 }}>
             <TextField 
@@ -59,13 +59,15 @@ export const LoginPage = () => {
             />
           </Grid2>
 
-          <Grid2 size="100%" display={ !!errorMessage? '': 'none'} sx={{mt:1}}>
+          <Grid2 container size={ { sm: 12 }} sx={{ mt: 1 }} display={ !!errorMessage? '': 'none' }>
+            <Grid2 >
               <Alert 
                 severity="error"
               >
                 { errorMessage }
               </Alert>
             </Grid2>
+          </Grid2>
           
           <Grid2 container size={ 12 } spacing={ 2 } sx={ { mb: 2, mt: 1}} >
 

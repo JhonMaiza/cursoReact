@@ -3,7 +3,8 @@ import { Grid2, Typography } from "@mui/material"
 
 export const NothingSelectedView = () => {
   return (
-    <Grid2  
+    <Grid2
+      className="animete__animeted animate__fadeIn animete__faster"
       width="100%"
       container
       spacing={ 0 }
